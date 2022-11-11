@@ -1,1 +1,11 @@
-<h1 role="heading">{{title}}</h1>
+<h1>{{title}}</h1>
+
+<nav aria-label="main-nav">
+  <ul>
+    <li> <a routerLink="/devices">Devices</a></li>
+    <li> <a routerLink="/schedules">Schedules</a></li>
+    <li> <a routerLink="/layout">Layout</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
