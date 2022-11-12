@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DevicesComponent } from './devices/devices.component';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { LayoutComponent } from './layout/layout.component';
+import { AddDeviceComponent } from './devices/add-device/add-device.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DevicesComponent,
     SchedulesComponent,
-    LayoutComponent
+    LayoutComponent,
+    AddDeviceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,24 @@
 <div role="application" aria-label="devices-section">
     <h5>Devices</h5>
-    <table aria-label="devices-table">
+    <button (click)="openAddDeviceForm()" [disabled]="formOn">Add</button>
+    <div *ngIf=" formOn">
+        <app-add-device></app-add-device>
+    </div>
+
+    <table class="devices-table" aria-label="devices-table">
         <tr>
             <th>Name</th>
             <th>Room</th>
             <th>Power rating</th>
             <th>Status</th>
             <th>Image</th>
+        </tr>
+        <tr *ngFor="let device of deviceList">
+            <td>{{device.name}}</td>
+            <td>{{device.room}}</td>
+            <td>{{device.powerRating}}</td>
+            <td>{{device.status}}</td>
+            <td> <img src="{{device.imageUrl}}" alt="{{device.imageLabel}}"></td>
         </tr>
     </table>
 </div>
