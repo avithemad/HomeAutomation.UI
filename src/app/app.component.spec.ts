@@ -44,7 +44,7 @@ describe('AppComponent', () => {
     expect(navigationRegion).toBeInTheDocument();
 
     expect(
-      await within(navigationRegion).getByRole('link', { name: /layout/i })
+      within(navigationRegion).getByRole('link', { name: /layout/i })
     ).toBeInTheDocument();
   });
 
@@ -52,9 +52,8 @@ describe('AppComponent', () => {
     const { fixture } = await renderComponent();
 
     await fireEvent.click(screen.getByRole('link', { name: /devices/i }));
-    await fixture.whenStable();
     expect(
-      await screen.getByRole('application', { name: /devices-section/i })
+      screen.getByRole('application', { name: /devices-section/i })
     ).toBeInTheDocument();
   });
 
@@ -62,9 +61,8 @@ describe('AppComponent', () => {
     const { fixture } = await renderComponent();
 
     await fireEvent.click(screen.getByRole('link', { name: /schedules/i }));
-    await fixture.whenStable();
     expect(
-      await screen.getByRole('application', { name: /schedules-section/i })
+      screen.getByRole('application', { name: /schedules-section/i })
     ).toBeInTheDocument();
   });
 
@@ -72,9 +70,8 @@ describe('AppComponent', () => {
     const { fixture } = await renderComponent();
 
     await fireEvent.click(screen.getByRole('link', { name: /layout/i }));
-    await fixture.whenStable();
     expect(
-      await screen.getByRole('application', { name: /layout-section/i })
+      screen.getByRole('application', { name: /layout-section/i })
     ).toBeInTheDocument();
   });
 });
